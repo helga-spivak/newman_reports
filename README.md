@@ -101,23 +101,3 @@ git commit -m "Сообщение коммита"
 ```bash
 git push
 ```
-
-EOF
-
-# Создание файла .nojekyll в папке docs
-
-touch docs/.nojekyll
-
-# Добавляем README.md и docs в git
-
-git add README.md docs
-
-# Коммитим изменения
-
-git commit -m "Add README and .nojekyll for GitHub Pages"
-
-# Пушим в удалённый репозиторий
-
-git push
-
-```
