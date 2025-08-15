@@ -1,5 +1,5 @@
 # Newman Reports
-## Языки
+## Language
 - [English](#english)
 - [Русский](#русский)
 
