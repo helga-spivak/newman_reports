@@ -1,4 +1,3 @@
-````markdown
 # Newman Reports
 
 ---
