@@ -1,27 +1,18 @@
 ````markdown
 # Newman Reports
 
-<style>
-.tab { overflow: hidden; border-bottom: 1px solid #ccc; margin-bottom: 10px; }
-.tab button { background-color: #f1f1f1; float: left; border: none; outline: none; cursor: pointer; padding: 8px 16px; transition: 0.3s; font-size: 14px; }
-.tab button.active { background-color: #ddd; font-weight: bold; }
-.tabcontent { display: none; padding: 10px 0px; border-top: none; }
-</style>
+---
 
-<div class="tab">
-  <button class="tablinks active" onclick="openTab(event, 'English')">🇬🇧 English</button>
-  <button class="tablinks" onclick="openTab(event, 'Russian')">🇷🇺 Русский</button>
-</div>
+## English
 
-<div id="English" class="tabcontent" style="display:block;">
-## Repository setup
+### Repository Setup
 
-1. Go to project root:
+1. Go to your project folder:
 ```bash
 cd /path/to/Reports
 ````
 
-2. Initialize git (if not done yet):
+2. Initialize git (if not already done):
 
 ```bash
 git init
@@ -35,20 +26,20 @@ git add .gitignore
 git commit -m "Ignore macOS system files"
 ```
 
-4. Create `.nojekyll` for the docs folder:
+4. Create a `.nojekyll` file in `docs`:
 
 ```bash
 touch docs/.nojekyll
 ```
 
-5. Add docs folder with HTML reports:
+5. Add the `docs` folder with HTML reports:
 
 ```bash
 git add docs
 git commit -m "Add docs folder with HTML reports and disable Jekyll"
 ```
 
-6. Connect remote repository (SSH):
+6. Connect your SSH repository:
 
 ```bash
 git remote add origin <YOUR_GIT_SSH_URL>
@@ -56,40 +47,26 @@ git branch -M main
 git push -u origin main
 ```
 
-### Adding new files
+7. Add new HTML reports:
 
 ```bash
 cp /path/to/new/report.html docs/
-git add docs/<new-file-name>.html
+git add docs/<report_filename>.html
 git commit -m "Add new HTML report"
 git push
 ```
 
-### Useful Git commands
+**Link to the new report**:
 
-```bash
-git status
-git add .
-git commit -m "Commit message"
-git push
+```
+https://<YOUR_GITHUB_USERNAME>.github.io/<REPO_NAME>/<report_filename>.html
 ```
 
-### Branching
+---
 
-```bash
-git checkout -b <branch-name>
-git add .
-git commit -m "Description of changes on new branch"
-git push -u origin <branch-name>
-git checkout main
-git merge <branch-name>
-git push
-```
+## Русский
 
-</div>
-
-<div id="Russian" class="tabcontent">
-## Настройка репозитория
+### Настройка репозитория
 
 1. Перейти в корень проекта:
 
@@ -124,7 +101,7 @@ git add docs
 git commit -m "Add docs folder with HTML reports and disable Jekyll"
 ```
 
-6. Подключение удалённого репозитория (SSH):
+6. Подключение SSH репозитория:
 
 ```bash
 git remote add origin <YOUR_GIT_SSH_URL>
@@ -132,46 +109,17 @@ git branch -M main
 git push -u origin main
 ```
 
-### Добавление новых файлов
+7. Добавление новых HTML-отчётов:
 
 ```bash
 cp /путь/к/новому/отчету.html docs/
-git add docs/имя_нового_файла.html
+git add docs/<имя_нового_файла>.html
 git commit -m "Add new HTML report"
 git push
 ```
 
-### Полезные команды Git
+**Ссылка на новый отчёт**:
 
-```bash
-git status
-git add .
-git commit -m "Сообщение коммита"
-git push
 ```
-
-### Работа с ветками
-
-```bash
-git checkout -b <название-ветки>
-git add .
-git commit -m "Описание изменений на новой ветке"
-git push -u origin <название-ветки>
-git checkout main
-git merge <название-ветки>
-git push
+https://<YOUR_GITHUB_USERNAME>.github.io/<REPO_NAME>/<имя_нового_файла>.html
 ```
-
-</div>
-
-<script>
-function openTab(evt, tabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); }
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-</script>
