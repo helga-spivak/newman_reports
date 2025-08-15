@@ -3,8 +3,6 @@
 - [English](#english)
 - [Русский](#русский)
 
----
-
 ## English
 
 ### Repository Setup
