@@ -1,4 +1,7 @@
 # Newman Reports
+## Языки
+- [English](#english)
+- [Русский](#русский)
 
 ---
 
