@@ -1,12 +1,47 @@
 # Newman Reports
 
-[🇬🇧 English](#english) | [🇷🇺 Русский](#russian)
+<style>
+/* Контейнер вкладок */
+.tab {
+  overflow: hidden;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
 
----
+/* Кнопки вкладок */
+.tab button {
+  background-color: #f1f1f1;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: 0.3s;
+  font-size: 14px;
+}
 
-## English {#english}
+/* Активная вкладка */
+.tab button.active {
+  background-color: #ddd;
+  font-weight: bold;
+}
 
-### Repository setup
+/* Содержимое вкладки */
+.tabcontent {
+  display: none;
+  padding: 10px 0px;
+  border-top: none;
+}
+</style>
+
+<div class="tab">
+  <button class="tablinks active" onclick="openTab(event, 'English')">🇬🇧 English</button>
+  <button class="tablinks" onclick="openTab(event, 'Russian')">🇷🇺 Русский</button>
+</div>
+
+<!-- English Content -->
+<div id="English" class="tabcontent" style="display:block;">
+## Repository setup
 
 1. Go to project root:
 ```bash
@@ -48,8 +83,6 @@ git branch -M main
 git push -u origin main
 ```
 
----
-
 ### Adding new files
 
 1. Copy new HTML report to docs folder:
@@ -82,70 +115,33 @@ git push
 https://<YOUR_GITHUB_USERNAME>.github.io/<REPO_NAME>/<new-file-name>.html
 ```
 
----
-
 ### Useful Git commands
-
-* Check status:
 
 ```bash
 git status
-```
-
-* Add all changes:
-
-```bash
 git add .
-```
-
-* Commit changes:
-
-```bash
 git commit -m "Commit message"
-```
-
-* Push changes:
-
-```bash
 git push
 ```
 
----
-
 ### Branching
-
-#### Create new branch and switch to it
 
 ```bash
 git checkout -b <branch-name>
-```
-
-#### Add changes and commit on new branch
-
-```bash
 git add .
 git commit -m "Description of changes on new branch"
-```
-
-#### Push branch to GitHub
-
-```bash
 git push -u origin <branch-name>
-```
-
-#### Merge branch into main (after review)
-
-```bash
 git checkout main
 git merge <branch-name>
 git push
 ```
 
----
+</div>
 
-## Russian {#russian}
+<!-- Russian Content -->
 
-### Настройка репозитория
+<div id="Russian" class="tabcontent">
+## Настройка репозитория
 
 1. Перейти в корень проекта:
 
@@ -188,8 +184,6 @@ git branch -M main
 git push -u origin main
 ```
 
----
-
 ### Добавление новых файлов
 
 1. Копируем новый HTML-отчёт в папку `docs`:
@@ -222,61 +216,41 @@ git push
 https://<YOUR_GITHUB_USERNAME>.github.io/<REPO_NAME>/имя_нового_файла.html
 ```
 
----
-
 ### Полезные команды Git
-
-* Проверка статуса:
 
 ```bash
 git status
-```
-
-* Добавление всех изменений:
-
-```bash
 git add .
-```
-
-* Создание коммита:
-
-```bash
 git commit -m "Сообщение коммита"
-```
-
-* Пуш изменений на GitHub:
-
-```bash
 git push
 ```
 
----
-
 ### Работа с ветками
-
-#### Создание новой ветки и переключение на неё
 
 ```bash
 git checkout -b <название-ветки>
-```
-
-#### Добавление изменений и коммит на новой ветке
-
-```bash
 git add .
 git commit -m "Описание изменений на новой ветке"
-```
-
-#### Отправка ветки на GitHub
-
-```bash
 git push -u origin <название-ветки>
-```
-
-#### Слияние ветки с main (после проверки изменений)
-
-```bash
 git checkout main
 git merge <название-ветки>
 git push
 ```
+
+</div>
+
+<script>
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
