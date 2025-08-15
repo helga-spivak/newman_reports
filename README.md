@@ -1,37 +1,11 @@
+````markdown
 # Newman Reports
 
 <style>
-/* Контейнер вкладок */
-.tab {
-  overflow: hidden;
-  border-bottom: 1px solid #ccc;
-  margin-bottom: 10px;
-}
-
-/* Кнопки вкладок */
-.tab button {
-  background-color: #f1f1f1;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 8px 16px;
-  transition: 0.3s;
-  font-size: 14px;
-}
-
-/* Активная вкладка */
-.tab button.active {
-  background-color: #ddd;
-  font-weight: bold;
-}
-
-/* Содержимое вкладки */
-.tabcontent {
-  display: none;
-  padding: 10px 0px;
-  border-top: none;
-}
+.tab { overflow: hidden; border-bottom: 1px solid #ccc; margin-bottom: 10px; }
+.tab button { background-color: #f1f1f1; float: left; border: none; outline: none; cursor: pointer; padding: 8px 16px; transition: 0.3s; font-size: 14px; }
+.tab button.active { background-color: #ddd; font-weight: bold; }
+.tabcontent { display: none; padding: 10px 0px; border-top: none; }
 </style>
 
 <div class="tab">
@@ -39,7 +13,6 @@
   <button class="tablinks" onclick="openTab(event, 'Russian')">🇷🇺 Русский</button>
 </div>
 
-<!-- English Content -->
 <div id="English" class="tabcontent" style="display:block;">
 ## Repository setup
 
@@ -85,34 +58,11 @@ git push -u origin main
 
 ### Adding new files
 
-1. Copy new HTML report to docs folder:
-
 ```bash
 cp /path/to/new/report.html docs/
-```
-
-2. Add file to git:
-
-```bash
 git add docs/<new-file-name>.html
-```
-
-3. Commit changes:
-
-```bash
 git commit -m "Add new HTML report"
-```
-
-4. Push to GitHub:
-
-```bash
 git push
-```
-
-5. Link to the report after Pages update:
-
-```
-https://<YOUR_GITHUB_USERNAME>.github.io/<REPO_NAME>/<new-file-name>.html
 ```
 
 ### Useful Git commands
@@ -137,8 +87,6 @@ git push
 ```
 
 </div>
-
-<!-- Russian Content -->
 
 <div id="Russian" class="tabcontent">
 ## Настройка репозитория
@@ -186,34 +134,11 @@ git push -u origin main
 
 ### Добавление новых файлов
 
-1. Копируем новый HTML-отчёт в папку `docs`:
-
 ```bash
 cp /путь/к/новому/отчету.html docs/
-```
-
-2. Добавляем файл в git:
-
-```bash
 git add docs/имя_нового_файла.html
-```
-
-3. Коммитим изменения:
-
-```bash
 git commit -m "Add new HTML report"
-```
-
-4. Пушим на GitHub:
-
-```bash
 git push
-```
-
-5. Ссылка на новый отчёт после обновления Pages:
-
-```
-https://<YOUR_GITHUB_USERNAME>.github.io/<REPO_NAME>/имя_нового_файла.html
 ```
 
 ### Полезные команды Git
@@ -243,13 +168,9 @@ git push
 function openTab(evt, tabName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
+  for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
   tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
+  for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); }
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
